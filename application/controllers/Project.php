@@ -52,7 +52,7 @@ class Project extends CI_Controller {
 		
 		
 		if ($response){
-			$data['response'] = json_decode($response);
+			$data['collection'] = json_decode($response);
 		}
 		
 		$this->load->view('Project/listProject',$data);
