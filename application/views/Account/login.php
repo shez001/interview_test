@@ -1,8 +1,8 @@
  <form class="form-horizontal">
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email:</label>
+    <label class="control-label col-sm-2" for="username">Username:</label>
     <div class="col-sm-2">
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
+      <input type="text" class="form-control" id="username" placeholder="Enter username">
     </div>
   </div>
   <div class="form-group">
