@@ -1,21 +1,21 @@
 
-<table>
-
 <?php
 
 
 foreach ($collection as $item){
 
-	echo "
+	echo '
+	<table class="table table-striped">
 		<tr>
-			<td>".$item->title."</td>
+			<td>'.$item->title.'</td>
 		</tr>
-	";
+	</table>	
+	';
 }
 ?>
 
 
-</table>
+
 
 
 
