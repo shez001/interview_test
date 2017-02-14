@@ -7,7 +7,7 @@ class Project extends CI_Controller {
 		Function to get data from webservice
 		
 	*/
-	private function getData()
+	private function getProjectData()
 	{
 		$curl = curl_init();
 		//Using Curl to make the call using the authorization key via headers
@@ -42,19 +42,22 @@ class Project extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 	/**
-	 * list Page for this controller.
+	 * @author Shahzaad Ismail
+	 * @abstract list Page for this controller.
 	 */
 	public function listProject()
 	{
 		$data = array();
-	
-		$response = $this->getData();
+		$view = array();
+		$response = $this->getProjectData();
 		
 		
 		if ($response){
 			$data['collection'] = json_decode($response);
 		}
 		
-		$this->load->view('Project/listProject',$data);
+		$view['viewData'] = $this->load->view('Project/listProject',$data,TRUE);
+		
+		$this->load->view('Project/project',$view);
 	}
 }
