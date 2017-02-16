@@ -1,4 +1,5 @@
- <form class="form-horizontal">
+<?php echo validation_errors(); ?>
+   <?php echo form_open('Account/login/'); ?>
   <div class="form-group">
     <label class="control-label col-sm-2" for="username">Username:</label>
     <div class="col-sm-2">

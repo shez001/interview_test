@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper(array('form'));
 		$data['login'] = $this->load->view("Account\login",null,TRUE);
 		$this->load->view('welcome_message',$data);
 		
