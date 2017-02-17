@@ -47,17 +47,25 @@ class Project extends CI_Controller {
 	 */
 	public function listProject()
 	{
-		$data = array();
-		$view = array();
-		$response = $this->getProjectData();
-		
-		
-		if ($response){
-			$data['collection'] = json_decode($response);
+	
+		if ($this->session->userdata('logged_in')){
+			$data = array();
+			$viewData = array();
+			$response = $this->getProjectData();
+			
+			
+			if ($response){
+				$data['collection'] = json_decode($response);
+			}
+			
+			$viewData['content'] = $this->load->view('Project/listProject',$data,TRUE);
+			
+			$this->load->view('welcome_message',$viewData);
+		}
+		else{
+			redirect('Account','refresh');
 		}
 		
-		$view['viewData'] = $this->load->view('Project/listProject',$data,TRUE);
 		
-		$this->load->view('Project/project',$view);
 	}
 }
