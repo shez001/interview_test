@@ -13,7 +13,7 @@ class Account extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper(array('form'));
-		$data['login'] = $this->load->view("Account/login",null,TRUE);
+		$data['content'] = $this->load->view("Account/login",null,TRUE);
 		$this->load->view('welcome_message',$data);
 		
 	}
@@ -29,13 +29,13 @@ class Account extends CI_Controller {
 	   if($this->form_validation->run() == FALSE)
 	   {
 		 //Field validation failed.  User redirected to login page
-		$data['login'] = $this->load->view("Account\login",null,TRUE);
+		$data['content'] = $this->load->view("Account\login",null,TRUE);
 		$this->load->view('welcome_message',$data);
 	   }
 	   else
 	   {
 		 //Go to private area
-		 $data['login'] = "Logged in";
+		 $data['content'] = "Logged in";
 		$this->load->view('welcome_message',$data);
 	   }
 	}
